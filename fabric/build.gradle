@@ -72,7 +72,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
 }
 
 modrinth {
-    token = findProperty('modrinthKey') ?: 0
+    token = (findProperty('modrinthKey') ?: '').toString()
     projectId = "${modrinth_id}"
     versionName = getArchivesBaseName() + "-" + getVersion()
     versionType = "${release_type}"
