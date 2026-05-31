@@ -74,7 +74,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
 modrinth {
     token = (findProperty('modrinthKey') ?: '').toString()
     projectId = "${modrinth_id}"
-    versionName = "${project.base.archivesName.get()}-${project.version}"
+    versionName = "${project.base.archivesName.get()}-${version}"
     versionType = "${release_type}"
     changelog = file('../CHANGELOG_LATEST.md').text
     uploadFile = file("${project.buildDir}/libs/${project.base.archivesName.get()}-${version}.jar")
